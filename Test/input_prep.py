@@ -6,8 +6,8 @@ import sys
 from PIL import Image
 
 classes = hiragana_classes.hiragana_literals
-romanji_class_dict = hiragana_classes.romanji_to_class
-# romanji_class_dict = katakana_classes.romanji_to_class
+# romanji_class_dict = hiragana_classes.romanji_to_class
+romanji_class_dict = katakana_classes.romanji_to_class
 
 
 def prepare_data(subdir, dimensions, channel):

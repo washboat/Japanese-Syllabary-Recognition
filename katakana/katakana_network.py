@@ -14,13 +14,13 @@ def train_katakana():
 
     training_images = training_images.reshape(training_images.shape[0], dims, dims, 1)
     testing_images = testing_images.reshape(testing_images.shape[0], dims, dims, 1)
-    shape = (dims, dims, 1)
+    dimenstions = (dims, dims, 1)
 
     datagen = ImageDataGenerator(rotation_range=45, zoom_range=0.7)
     datagen.fit(training_images)
 
     model = keras.Sequential([
-        keras.layers.Conv2D(64, kernel_size=(3, 3), activation="relu", input_shape=shape, padding="same"),
+        keras.layers.Conv2D(64, kernel_size=(3, 3), activation="relu", input_shape=dimenstions, padding="same"),
         keras.layers.Conv2D(64, kernel_size=(3, 3), activation="relu", padding="same"),
         keras.layers.MaxPooling2D(2, 2),
         keras.layers.Dropout(0.2),
@@ -46,7 +46,7 @@ def train_katakana():
         keras.layers.BatchNormalization(),
         keras.layers.Dropout(0.5),
 
-        keras.layers.Dense(51, activation="softmax"),
+        keras.layers.Dense(46, activation="softmax"),
     ])
     model.summary()
     model.compile(optimizer="adam", loss="sparse_categorical_crossentropy", metrics=["accuracy"])

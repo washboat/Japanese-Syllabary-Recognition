@@ -14,4 +14,4 @@ def read_next(file, metadata):
     image = Image.frombytes("F", resolution, unpacked[image_index], "bit", bit_depth)
     converted_image = image.convert("L")
 
-    return unpacked[metadata.jis_code_index], converted_image, unpacked[1]
+    return unpacked[metadata.jis_code_index], converted_image

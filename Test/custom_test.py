@@ -6,8 +6,8 @@ from hiragana import hiragana_classes
 from katakana import katakana_classes
 from keras.models import Sequential
 
-classes = hiragana_classes.hiragana_literals
-# classes = katakana_classes.katakana_literals
+# classes = hiragana_classes.hiragana_literals
+classes = katakana_classes.katakana_literals
 def test_model(model_str, image_directory, image_dims, channel):
     model = load_compile(model_str)
     x, y = input_prep.prepare_data(image_directory, image_dims, channel)
