@@ -33,6 +33,7 @@ def prepare_data(subdir, dimensions, channel):
                 im_arr = numpy.asarray(gray_scale)
                 images.append(numpy.asarray(gray_scale))
 
+    print(class_list)
     class_array = numpy.array(class_list)
     class_array = numpy.reshape(class_array, (class_array.size, 1))
     # class_array = tensorflow.keras.utils.to_categorical(class_array, 71)

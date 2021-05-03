@@ -4,7 +4,7 @@ import os
 import skimage.transform as skitr
 
 #
-# splits data into training and testing splits for training and validation
+# splits data into training and testing sets for later use in training neural networks
 #
 
 
@@ -56,8 +56,6 @@ def split(data_path, metadata, output_resolution):
 #
 # Splits kanji data into train test splits for training and validation.
 # ETL9G data is too large for my poor PC to handle in its entirety without running out of memory
-# ToDo:
-#   try ETL9B and/or ETL8G kanji
 #
 
 

@@ -7,6 +7,7 @@ import numpy as np
 #
 # reads ETL1 dataset and writes relevant data to npz file
 # Uses JIS_X_0201 codes provided in dataset to determine what data is relevant
+# JIS_X_0201 to UTF-8 conversions can be found in ../Util/encoding.py
 #
 def read():
     metadata = data_definitions.katakana_definition
@@ -15,14 +16,16 @@ def read():
     expected_duplicates_set = {"ｲ", "ｳ", "ｴ"}
     duplicate_counts = dict.fromkeys(expected_duplicates_set, 0)
     kana = kc.ETL1_katakana
-    #  ETL dataset is not sorted. indices is a map of kana -> indices to aid in knowing where to write data beforehand
-    #  a non continuous set of values within indices indicate that there are duplicates
+
+    # ETL dataset is not sorted, so I create a presorted map 'indices'.
+    # the map is of kana -> indices. As kana is read, its data is placed into its predetermined index of the map
+    # a non-continuous set of values inside 'indices' indicates that there are duplicates present.
     indices = dict(zip(sorted(kana), range(len(kana))))
     char_index_limit = 8
     index = 0
     for i in range(7):  # for every file in folder
         # Only ETL1C files 07-13 have katakana data
-        file_name = "ETL1/ETL1C_{:02d}".format(i + 7)
+        file_name = "datasets/ETL1/ETL1C_{:02d}".format(i + 7)
         with open(file_name, "rb") as file:
             if i == 6:
                 # file ETL1C_13 only has 3 characters per sheet

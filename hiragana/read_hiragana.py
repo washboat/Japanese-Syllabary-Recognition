@@ -11,6 +11,8 @@ import os
 # ku = row, ten = column
 # for hiragana, ku will always = 4
 #
+# JIS_X_0208 to UTF-8 conversions can be found in ../Util/encoding.py
+#
 
 def read_hiragana():
     metadata = data_definitions.hiragana_definition
@@ -22,7 +24,7 @@ def read_hiragana():
         bad_ten.append(encoding.char_to_kuten(letter)[1])
     hiragana = numpy.zeros([metadata.class_count, metadata.dataset_count, metadata.resolution[1], metadata.resolution[0]], dtype=numpy.uint8)
     for i in range(1, 33):  # for each file in folder
-        file_name = 'ETL8G/ETL8G_{:02d}'.format(i)
+        file_name = 'datasets/ETL8G/ETL8G_{:02d}'.format(i)
         with open(file_name, 'rb') as f:
             for j in range(metadata.dataset_per_physical_file):  # for each set of date per file
                 count = 0

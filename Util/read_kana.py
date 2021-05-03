@@ -1,7 +1,7 @@
 from PIL import Image
 import struct
 
-
+# image data as well as its corresponding metadata
 def read_next(file, metadata):
     resolution = metadata.resolution
     buffer_size = metadata.buffer
@@ -11,7 +11,6 @@ def read_next(file, metadata):
 
     buffer = file.read(buffer_size)
     unpacked = struct.unpack(format_string, buffer)
-    image = Image.frombytes("F", resolution, unpacked[image_index], "bit", bit_depth)
-    converted_image = image.convert("L")
+    converted_image = Image.frombytes("F", resolution, unpacked[image_index], "bit", bit_depth).convert("L")
 
     return unpacked[metadata.jis_code_index], converted_image

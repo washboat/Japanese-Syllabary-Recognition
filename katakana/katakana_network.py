@@ -3,6 +3,11 @@ from keras.preprocessing.image import ImageDataGenerator
 import numpy
 import os
 
+#
+# builds and trains convolutional neural network for recognition of katakana
+# model input is expected to be 64x64 in size
+#
+
 def train_katakana():
     dims = 64
 
@@ -14,13 +19,13 @@ def train_katakana():
 
     training_images = training_images.reshape(training_images.shape[0], dims, dims, 1)
     testing_images = testing_images.reshape(testing_images.shape[0], dims, dims, 1)
-    dimenstions = (dims, dims, 1)
+    dimensions = (dims, dims, 1)
 
     datagen = ImageDataGenerator(rotation_range=45, zoom_range=0.7)
     datagen.fit(training_images)
 
     model = keras.Sequential([
-        keras.layers.Conv2D(64, kernel_size=(3, 3), activation="relu", input_shape=dimenstions, padding="same"),
+        keras.layers.Conv2D(64, kernel_size=(3, 3), activation="relu", input_shape=dimensions, padding="same"),
         keras.layers.Conv2D(64, kernel_size=(3, 3), activation="relu", padding="same"),
         keras.layers.MaxPooling2D(2, 2),
         keras.layers.Dropout(0.2),

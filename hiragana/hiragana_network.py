@@ -4,7 +4,8 @@ from tensorflow import keras
 from keras.preprocessing.image import ImageDataGenerator
 
 #
-# builds and trains convolutional neural network
+# builds and trains convolutional neural network for recognition of hiragana
+# model input is expected to be 64x64 in size
 #
 
 

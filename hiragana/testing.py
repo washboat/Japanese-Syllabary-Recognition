@@ -1,6 +1,5 @@
-import numpy
-from tensorflow import keras
 import os
+import numpy
 from PIL import Image
 
 dims = 64

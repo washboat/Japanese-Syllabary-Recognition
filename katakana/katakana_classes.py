@@ -32,18 +32,6 @@ ETL1_katakana = [
     "ﾑ", "ﾒ", "ﾓ", "ﾔ", "ｲ",	"ﾕ", "ｴ", "ﾖ",
     "ﾗ", "ﾘ", "ﾙ", "ﾚ", "ﾛ", "ﾜ", "ｳ", "ｦ", "ﾝ"
 ]
-# katakana_literals = [
-#     "ア", "イ", "ウ", "エ", "オ",
-#     "カ", "キ", "ク", "ケ", "コ",
-#     "サ", "シ", "ス", "セ", "ソ",
-#     "タ", "チ", "ツ", "テ", "ト",
-#     "ナ", "ニ", "ヌ", "ネ", "ノ",
-#     "ハ", "ヒ", "フ", "ヘ", "ホ",
-#     "マ", "ミ", "ム", "メ", "モ",
-#     "ヤ", "ユ", "ヨ", "ラ", "リ",
-#     "ル", "レ", "ロ", "ワ", "ヰ",
-#     "ヱ", "ヲ", "ン"
-# ]
 katakana_literals = [
     "ｱ", "ｲ", "ｳ", "ｴ", "ｵ",
     "ｶ", "ｷ", "ｸ", "ｹ", "ｺ",
@@ -71,8 +59,5 @@ romanji = [
 romanji_to_katakana = dict(zip(romanji, katakana_literals))
 katakana_to_romanji = dict(zip(katakana_literals, romanji))
 romanji_to_class = dict(zip(romanji, range(len(romanji))))
-
-# for x in
-
 katakana_to_class = dict(zip(romanji, range(len(romanji))))
 
