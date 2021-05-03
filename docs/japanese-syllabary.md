@@ -3,7 +3,7 @@
 ## Hiragana
 
 ```text
-71 hiragana
+71 hiragana, including diacritics
 あ, い, う, え, お, か, が, き, ぎ, く, ぐ, け, げ, こ, ご, さ, ざ, し, じ, す,
 ず, せ, ぜ, そ, ぞ, た, だ, ち, ぢ, つ, づ, て, で, と, ど, な, に, ぬ, ね, の,
 は, ば, ぱ, ひ, び, ぴ, ふ, ぶ, ぷ, へ, べ, ぺ, ほ, ぼ, ぽ, ま, み, む, め, も,
@@ -22,6 +22,6 @@
 ```
 
 {% hint style="info" %}
-The katakana characters are displayed here in full-width. However, the characters in the ETL-1 dataset are all half-width!
+The katakana characters are displayed here in full width. However, the characters in the ETL-1 dataset are all half-width.
 {% endhint %}
 

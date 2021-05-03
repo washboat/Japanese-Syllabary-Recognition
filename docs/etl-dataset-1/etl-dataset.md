@@ -18,10 +18,10 @@ There are 51 subsets of data, each consisting solely of one character written by
 The characters ウ and ネ are each missing one record worth of data
 {% endhint %}
 
-The format of each record in the dataset is summarized in the table below. Note that only the relevant metadata is listed in the table. Some metadata, such as the age and occupation of the writer, is not listed here but can be found in the ETL [official documentation](http://etlcdb.db.aist.go.jp/etlcdb/etln/form_m.htm). Each record is 2052 bytes in size.
+The format of each record in the dataset is summarized in the table below. Note that only the relevant metadata is listed in the table. Some metadata, such as the age and occupation of the writer, is not listed here but can be found in the ETL [official documentation](http://etlcdb.db.aist.go.jp/specification-of-etl-1). Each record is 2052 bytes in size.
 
 | Byte Position | Number of Bytes | Type | Content |
-| :--- | :--- | :--- | :--- |
+| :---: | :---: | :---: | :---: |
 | 1-2 | 2 | Integer | Data Number |
 | 3-4 | 2 | ASCII | Character Code |
 | 5-6 | 2 | Integer | Serial Sheet Number |
@@ -30,22 +30,8 @@ The format of each record in the dataset is summarized in the table below. Note 
 | 33-2048 | 2016 | Packed | 64x63 Image Data |
 | 2049-2052 | 4 | Padding | N/A |
 
-### Anomalies
-
-#### Duplicates
-
-Three characters イ,  ウ,  and エ each appear as duplicates.
-
-#### Missing Data
-
-The characters ウ and ネ are each missing one record worth of data
-
-#### Obsolete
-
-The characters ヰ and ヱ are obsolete and are processed, but not used by the application.
-
 {% hint style="info" %}
-The characters ヰ and ヱ are obsolete and are processed, but not used by the application.
+The characters ヰ and ヱ are obsolete and are processed, but not used when training the neural networks.
 {% endhint %}
 
 {% hint style="info" %}

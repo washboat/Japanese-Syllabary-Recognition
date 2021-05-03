@@ -1,25 +1,14 @@
-# Initial page
+# JSR
 
-## Getting Super Powers
+## Goals
 
-Becoming a super hero is a fairly straight forward process:
+This repository contains scripts to process images of handwritten Japanese characters and train Convolutional Neural Networks \(CNN\) to recognize said characters. 
 
-```
-$ give me super-powers
-```
+### Results
 
-{% hint style="info" %}
- Super-powers are granted randomly so please submit an issue if you're not happy with yours.
-{% endhint %}
+Hiragana model accuracy achieved: 99%
 
-Once you're strong enough, save the world:
+Katakana model accuracy achieved: 98%
 
-{% code title="hello.sh" %}
-```bash
-# Ain't no code for that yet, sorry
-echo 'You got to trust me on this, I saved the world'
-```
-{% endcode %}
-
-
+Kanji model accuracy achieved: My computer is too weak \(⌣̩̩́\_⌣̩̩̀\)
 
